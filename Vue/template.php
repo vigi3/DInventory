@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <!-- <link rel="stylesheet" href="CSS/style.css" /> -->
-        <title><?= $titre ?></title>
+        <title><?= $title ?></title>
     </head>
     <body>
         <div id="global">
@@ -12,7 +12,7 @@
                 <p>Bienvenue !</p>
             </header>
             <div id="contenu">
-                <?= $contenu ?>
+                <?= $content ?>
             </div> <!-- #contenu -->
             <footer id="piedBlog">
                 Blog réalisé avec PHP, HTML5 et CSS.
