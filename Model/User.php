@@ -5,12 +5,15 @@ require_once 'Model/Model.php';
 class User extends Model {
 
     /** 
+     * @param string username
+     * getName by Username after Login
+     * 
      * @return string $nameRetrieved
      * The name of a user
     */
-    public function getName(string $name) {
-        $sql = 'SELECT Name FROM user WHERE Name=?';
-        $nameRetrieved = $this->RequestDB($sql, $name);
+    public function getName(string $username) {
+        $sql = 'SELECT Name FROM user WHERE Username=?';
+        $nameRetrieved = $this->RequestDB($sql, $username);
         return $nameRetrieved;
     }
 
