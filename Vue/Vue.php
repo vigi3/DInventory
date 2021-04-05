@@ -3,8 +3,8 @@
 class Vue {
 
     private string $file;
-    private string $content;
-    private string $title;
+    private $content;
+    private $title;
 
     public function __construct($action)
     {
@@ -12,18 +12,20 @@ class Vue {
     }
 
     public function generate($data) {
-        $content = $this->generateFile($this->file, $data);
-        $vue = $this->generateFile('Vue/template.php', array('title'=>$this->title));
+        $content = $this->generateFileWithArray($this->file, $data);
+        $vue = $this->generateFileWithArray('Vue/template.php', array('title'=>$this->title, 'content'=>$content));
 
         echo $vue;
     }
 
-    public function generateVue()
-    {
-        $vue = $this->generateFile('Vue/template.php');
+    public function generateLoginVue() {
+        $vue = $this->generateFile($this->file);
+
+        echo $vue;
     }
 
-    private function generateFile($file){
+    private function generateFile($file)
+    {
         if(file_exists($file)){
             ob_start();
             require $file;
@@ -34,7 +36,10 @@ class Vue {
         }
     }
 
-    private function generateFileWithData($file, $data){
+
+
+    private function generateFileWithArray($file, $data)
+    {
         if(file_exists($file)){
             extract($data);
             ob_start();

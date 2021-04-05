@@ -20,7 +20,11 @@ class Router {
 
             if (isset($_GET['action'])) 
             {
-                echo 'action set';
+                if($_GET['action'] == 'UserLogin')
+                {
+                    echo 'Bravo';
+                }
+
             }
             else 
             {

@@ -9,16 +9,13 @@ class UserLoginController {
     private $username;
     private $password;
     private string $name;
+    private string $title;
 
-    public function __construct()
-    {
-        $this->user = new User();
-    }
 
     public function userLogVue()
     {
         $vue = new Vue('UserLogin');
-        $vue->generateVue();
+        $vue->generateLoginVue();
     }
 
 
@@ -40,16 +37,16 @@ class UserLoginController {
     //     $vue->generate(array('name' => $name));
     // }
 
-    public function checkCredentials(string $inputUsername, string $inputPassword)
+    public function checkCredentials()
     {
         if (isset($_POST['submit'])) 
         {
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            if ($this->user->usernameEquals($inputUsername) || $this->user->passwordEquals($inputPassword)) 
+            if ($this->user->usernameEquals($username) || $this->user->passwordEquals($password)) 
             {
-                echo $inputUsername;
+                echo $username;
             }
         }
         

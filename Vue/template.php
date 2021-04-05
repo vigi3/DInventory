@@ -7,8 +7,10 @@
     </head>
     <body>
         <div id="global">
-                <h1 id="titreBlog">Gestionnaire de materiel</h1></a>
+                <h1 id="title"><?= $title ?></h1>
+                <h2 id="titreBlog">Gestionnaire de materiel</h2>
                 <p>Bienvenue !</p>
+                <p><?= $content ?></p>
             
         </div> <!-- #global -->
     </body>
