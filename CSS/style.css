@@ -1,0 +1,13 @@
+.loginBackground {
+    background-image: url('../Img/blurred-ping-pong-table.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+.margTopContainer {
+    margin-top: 10%;
+}
