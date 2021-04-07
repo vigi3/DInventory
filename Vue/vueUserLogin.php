@@ -27,9 +27,9 @@
             <div class="col-4 text-center">
               <form method="POST">
                 <label for="username" class="form-label">Username:</label><br>
-                <input type="email" id="uname" name="username" class="form-control" placeholder="name@example.com"><br>
+                <input type="text" name="username" class="form-control" placeholder="name@example.com"><br>
                 <label for="password" class="form-label">Password:</label><br>
-                <input type="password" id="pwd" name="password" class="form-control"><br>
+                <input type="password" name="password" class="form-control"><br>
                 <input type="submit" value="Submit" name="submit" class="btn btn-secondary">
               </form>
             </div>

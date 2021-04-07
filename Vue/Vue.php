@@ -13,7 +13,7 @@ class Vue {
 
     public function generate($data) {
         $content = $this->generateFileWithArray($this->file, $data);
-        $vue = $this->generateFileWithArray('Vue/template.php', array('title'=>$this->title, 'content'=>$content));
+        $vue = $this->generateFileWithArray('Vue/template.php', array('name'=>$this->name, 'content'=>$this->content));
 
         echo $vue;
     }

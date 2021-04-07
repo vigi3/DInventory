@@ -31,7 +31,7 @@ class User extends Model {
      * @return bool
      * True if $username = $usernameRetrieved
     */
-    public function usernameEquals(string $username): bool {
+    public function usernameEquals($username): bool {
         $sql = 'SELECT Username FROM user WHERE Username=?';
         $usernameRetrieved = $this->RequestDB($sql, $username);
         if($usernameRetrieved === $username){
@@ -47,7 +47,7 @@ class User extends Model {
      * True if $password = $passwordRetrieved
     */
 
-    public function passwordEquals(string $password): bool {
+    public function passwordEquals($password): bool {
         $sql = 'SELECT Password FROM user WHERE Password=?';
         $passwordRetrieved = $this->RequestDB($sql, $password);
         if($passwordRetrieved === $password){

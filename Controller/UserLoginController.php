@@ -5,7 +5,7 @@ require_once 'Vue/Vue.php';
 
 class UserLoginController {
 
-    private User $user;
+    private $user;
     private $username;
     private $password;
     private string $name;
@@ -37,20 +37,25 @@ class UserLoginController {
     //     $vue->generate(array('name' => $name));
     // }
 
-    public function checkCredentials()
+    public function checkCredentials(string $username, string $password)
     {
-        if (isset($_POST['submit'])) 
-        {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+        $this->user = new User();
+        $usernameArray = array();
+        $usernameArray[] = $username; 
 
-            if ($this->user->usernameEquals($username) || $this->user->passwordEquals($password)) 
-            {
-                echo $username;
-            }
-        }
+        $passwordArray = array();
+        $passwordArray[] = $password;
         
+        $firstNameUserArray = array();
+        if ($this->user->usernameEquals($usernameArray) || $this->user->passwordEquals($passwordArray)) 
+        {
+            $firstNameUserArray[] = $this->user->getName($username);
+            $vueMainPage = new Vue('MainPage');
+            $vueMainPage->generate(array('name' => $firstNameUserArray));
+        }
+        else 
+        {
+            
+        }
     }
-
-
 }

@@ -17,13 +17,18 @@ class Router {
     {
 
         try {
-
-            if (isset($_GET['action'])) 
+            
+            if (isset($_POST['submit'])) 
             {
-                if($_GET['action'] == 'UserLogin')
-                {
-                    echo 'Bravo';
-                }
+               $this->userLogCtrl->checkCredentials($_POST['username'], $_POST['password']); 
+                // $this->userLogCtrl->userLogVue();
+            }
+            else if (isset($_GET['action'])) 
+            {
+                // if($_GET['action'] == 'UserLogin')
+                // {
+                //     echo 'Bravo';
+                // }
 
             }
             else 

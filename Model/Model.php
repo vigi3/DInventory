@@ -2,7 +2,7 @@
 
 abstract class Model {
 
-    private PDO $database;
+    private $database;
 
 
     //Request to db with parameters or without 
