@@ -6,11 +6,6 @@ require_once 'Vue/Vue.php';
 class UserLoginController {
 
     private $user;
-    private $username;
-    private $password;
-    private string $name;
-    private string $title;
-
 
     public function userLogVue()
     {
@@ -18,44 +13,32 @@ class UserLoginController {
         $vue->generateLoginVue();
     }
 
-
-     /** 
+    /** 
+     * @param string $username and $password 
+     * 
      * @return void
-     * Create a new user
+     * Check credential of a user, redirect back to login page if wrong login.
     */
-    // public function userCreation(string $name, string $lastName, int $role, string $username, string $password): void 
-    // {
-    //     $user = $this->user->newUser($name, $lastName, $role, $username, $password);
-    // }
 
-
-
-    // public function getNameUser(string $username)
-    // {
-    //     $name = $this->user->getName($username);
-    //     $vue = new Vue('UserLogin');
-    //     $vue->generate(array('name' => $name));
-    // }
-
-    public function checkCredentials(string $username, string $password)
+    public function checkCredentials(string $username, string $password): bool
     {
+        $validCred = false;
         $this->user = new User();
-        $usernameArray = array();
-        $usernameArray[] = $username; 
 
-        $passwordArray = array();
-        $passwordArray[] = $password;
-        
+        $usernameArray = array($username);
+        $passwordArray = array($password);
+        $usernameArray = array($username);
         $firstNameUserArray = array();
-        if ($this->user->usernameEquals($usernameArray) || $this->user->passwordEquals($passwordArray)) 
+
+
+        if ($this->user->usernameEquals($usernameArray) && $this->user->passwordEquals($passwordArray)) 
         {
-            $firstNameUserArray[] = $this->user->getName($username);
-            $vueMainPage = new Vue('MainPage');
-            $vueMainPage->generate(array('name' => $firstNameUserArray));
+            $firstNameUserArray[] = $this->user->getName($usernameArray);
+            $validCred = true;
+            return $validCred;
         }
-        else 
-        {
-            
-        }
+        
+        return $validCred;
     }
+
 }

@@ -1,5 +1,6 @@
-<?php $this->title='Accueil' ?>
+<?php $this->title='Accueil';
+echo $firstNameUserArray['name'];?>
 
 <?php foreach ($firstNameUserArray as $firstNameUser): ?>
-    <h1 class="titleNameUser">Bienvenue, <?= $firstNameUser['name'] ?></h1>
+    <h1 class="titleNameUser">Bienvenue, <?= $firstNameUser['Name'] ?></h1>
 <?php endforeach; ?>    

@@ -6,15 +6,20 @@ abstract class Model {
 
 
     //Request to db with parameters or without 
-    public function RequestDB($sql, $params = null): PDOStatement {
+    public function RequestDB($sql, $params = null): array {
         if($params == null ){
-            $resultRequest = $this->getDatabase()->query($sql);
+            $request = $this->getDatabase()->query($sql);
         }
         else {
-            $resultRequest = $this->getDatabase()->prepare($sql);
-            $resultRequest->execute($params);
+            $request = $this->getDatabase()->prepare($sql);
+            $request->execute($params);
+            if ($request->rowCount() > 0) {
+                $resultRequest = $request->fetch(PDO::FETCH_BOTH);
+            }
+            else {
+                $resultRequest = array('empty');
+            }
         }
-
         return $resultRequest;
     }
 

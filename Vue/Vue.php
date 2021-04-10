@@ -4,6 +4,7 @@ class Vue {
 
     private string $file;
     private $content;
+    private $name;
     private $title;
 
     public function __construct($action)
@@ -13,7 +14,7 @@ class Vue {
 
     public function generate($data) {
         $content = $this->generateFileWithArray($this->file, $data);
-        $vue = $this->generateFileWithArray('Vue/template.php', array('name'=>$this->name, 'content'=>$this->content));
+        $vue = $this->generateFileWithArray('Vue/template.php', array('title'=>$this->title, 'name'=>$this->name, 'content'=>$this->content));
 
         echo $vue;
     }
