@@ -1,6 +1,4 @@
 <?php $this->title='Accueil';
-echo $firstNameUserArray['name'];?>
+$this->nameUser = $_SESSION['name'];?>
 
-<?php foreach ($firstNameUserArray as $firstNameUser): ?>
-    <h1 class="titleNameUser">Bienvenue, <?= $firstNameUser['Name'] ?></h1>
-<?php endforeach; ?>    
+  

@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="global">
-                <h1 id="title"><?= $title ?></h1>
+                <h1 id="title">Bienvenue, <?= $nameUser ?></h1>
                 <h2 id="titreBlog">Gestionnaire de materiel</h2>
                 <p>Bienvenue !</p>
                 <p><?= $content ?></p>
