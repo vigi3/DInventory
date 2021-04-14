@@ -15,40 +15,29 @@
         <link rel="stylesheet" href="CSS/style.css">
         <title><?= $title ?></title>
     </head>
-    <body class="heightGraphPage">
-        <div class="d-inline-flex justify-content-center bd-highlight h-100"> <!-- FlexBox Container -->
-                <div class="pt-5 px-0 bg-dark"> <!-- NavBar -->
-                    <ul class="nav flex-column mt-5 pt-5 px-1 bg-dark">
-                        <li class="nav-item pb-3">
-                            <a class="nav-link link-light" aria-current="page" href="#"><h2><i class="bi bi-app"></i></i></h1></a> <!-- Home -->
-                        </li>
-                        <li class="nav-item pb-3">
-                            <a class="nav-link link-light" href="#"><h2><i class="bi bi-box"></i></h2></a> <!-- Products -->
-                        </li>
-                        <li class="nav-item pb-3">
-                            <a class="nav-link link-light" href="#"><h2><i class="bi bi-calendar3"></i></h2></a> <!-- Reservation -->
-                        </li>
-                        <li class="nav-item pb-3">
-                            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-plus-circle"></i></h2></a> <!-- Add product -->
-                        </li>
-                        <li class="nav-item pb-3">
-                            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-person-x"></i></h2></a> <!-- Log out -->
-                        </li>
-                        <li class="nav-item pb-3">
-                            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-gear"></i></h2></a> <!-- Setting/Add User -->
-                        </li>
-                    </ul>
-                </div> <!-- EndNavBar -->
-        </div> <!-- End FlexBox Container -->
-        <div class="d-inline-flex"> <!-- FlexBox Container -->
-            <div class="test" style="background-color: blue;">
-                <h1 class="title">Bienvenue, <?= $nameUser ?></h1>
-                <h4>Gestionnaire de materiel</h4>
-                <p>Bienvenue !</p>
-                <p><?= $content ?></p>
+    <body class="vh-100">
+        <nav class="nav d-inline-flex flex-column nav-justified bg-dark vh-100 pt-5" id="sticky-sidebar"> <!-- NavBar -->
+            <a class="nav-link link-light" aria-current="page" href="#"><h2><i class="bi bi-app"></i></i></h1></a> <!-- Home -->
+            <a class="nav-link link-light" href="#"><h2><i class="bi bi-box"></i></h2></a> <!-- Products -->
+            <a class="nav-link link-light" href="#"><h2><i class="bi bi-calendar3"></i></h2></a> <!-- Reservation -->
+            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-plus-circle"></i></h2></a> <!-- Add product -->
+            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-person-x"></i></h2></a> <!-- Log out -->
+            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-gear"></i></h2></a> <!-- Setting/Add User -->
+        </nav>  <!-- EndNavBar -->
+        <div class="container-fluid"> <!-- Container -->
+            <div class="row">
+                <div class="col-1" style="background-color: red;">
+                </div>
+                <div class="col-11 align-self-start" style="background-color: blue;"> <!--  -->
+                    <h1 class="title text-capitalize">Bienvenue, <?= $nameUser ?></h1>
+                    <h5 class="fw-light fst-italic text-secondary">Gestionnaire de materiel</h5>
+                    <p><?= $content ?></p>
+                </div> <!--  -->
             </div>
+                
             
-        </div> <!-- End FlexBox Container -->
+        </div> <!-- EndContainer -->
+        
         <footer id="piedBlog">
             Blog réalisé avec PHP, HTML5 et CSS.
         </footer>
