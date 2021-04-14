@@ -6,11 +6,10 @@ require_once 'Vue/Vue.php';
 class MainPageController {
 
     private ?string $nameUser = null;
-    private string $titlePage = 'Accueil';
-    private  $titleArray = array('title'=>'Accueil');
+    private array $titleArray = array('title'=>'Accueil');
 
 
-    public function mainPageVue(string $title) 
+    public function mainPageVue() 
     {
         session_start();
         $_SESSION['title'] = 'Accueil';

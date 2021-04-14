@@ -24,7 +24,7 @@ class Router {
             if (isset($_POST['submit'])) 
             {
                 if ($this->userLogCtrl->checkCredentials($_POST['username'], $_POST['password'])) {
-                    $this->mainPageLogCtrl->mainPageVue('Accueil');
+                    $this->mainPageLogCtrl->mainPageVue();
                 }
                 else {
                     $this->userLogCtrl->userLogVue();

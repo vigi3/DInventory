@@ -11,3 +11,9 @@ body {
 .margTopContainer {
     margin-top: 10%;
 }
+
+.heightGraphPage {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
