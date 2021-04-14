@@ -4,6 +4,10 @@
     background-size: cover;
 }
 
+.mainBackground {
+    background-color: #ededed;
+}
+
 body {
     font-family: 'Oswald', sans-serif;
 }
@@ -17,3 +21,30 @@ body {
     max-width: 20%;
 }
 
+.fontSizeWelcome {
+    font-size: 4em;
+}
+
+/* Graph color */
+.graphBlack {
+    background-color: #171820;
+}
+
+.graphYellow {
+    background-color: #fdc029;
+}
+
+.graphOrange {
+    background-color: #df861d;
+}
+
+.graphRed {
+    background-color: #aa3d01;
+}
+
+
+
+
+.graphCorner {
+    border-radius: 1rem;
+}
