@@ -18,12 +18,12 @@
     <body class="vh-100 mainBackground">
         <!-- NavBar -->
         <nav class="nav d-inline-flex flex-column nav-justified bg-dark vh-100 pt-5 shadow-sm" id="sticky-sidebar"> 
-            <a class="nav-link link-light" aria-current="page" href="#"><h2><i class="bi bi-app"></i></i></h1></a> <!-- Home -->
-            <a class="nav-link link-light" href="#"><h2><i class="bi bi-box"></i></h2></a> <!-- Products -->
-            <a class="nav-link link-light" href="#"><h2><i class="bi bi-calendar3"></i></h2></a> <!-- Reservation -->
-            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-plus-circle"></i></h2></a> <!-- Add product -->
-            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-person-x"></i></h2></a> <!-- Log out -->
-            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-gear"></i></h2></a> <!-- Setting/Add User -->
+            <a class="nav-link link-light" aria-current="page" href="#"><h2><i class="bi bi-app hoverNav"></i></i></h1></a> <!-- Home -->
+            <a class="nav-link link-light" href="#"><h2><i class="bi bi-box hoverNav"></i></h2></a> <!-- Products -->
+            <a class="nav-link link-light" href="#"><h2><i class="bi bi-calendar3 hoverNav"></i></h2></a> <!-- Reservation -->
+            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-plus-circle hoverNav"></i></h2></a> <!-- Add product -->
+            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-person-x hoverNav"></i></h2></a> <!-- Log out -->
+            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-gear hoverNav"></i></h2></a> <!-- Setting/Add User -->
         </nav>  
         <!-- EndNavBar -->
         <!-- Container -->
