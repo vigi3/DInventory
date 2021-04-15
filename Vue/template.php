@@ -17,7 +17,7 @@
     </head>
     <body class="vh-100 mainBackground">
         <!-- NavBar -->
-        <nav class="nav d-inline-flex flex-column nav-justified bg-dark vh-100 pt-5" id="sticky-sidebar"> 
+        <nav class="nav d-inline-flex flex-column nav-justified bg-dark vh-100 pt-5 shadow-sm" id="sticky-sidebar"> 
             <a class="nav-link link-light" aria-current="page" href="#"><h2><i class="bi bi-app"></i></i></h1></a> <!-- Home -->
             <a class="nav-link link-light" href="#"><h2><i class="bi bi-box"></i></h2></a> <!-- Products -->
             <a class="nav-link link-light" href="#"><h2><i class="bi bi-calendar3"></i></h2></a> <!-- Reservation -->
@@ -32,11 +32,10 @@
             <div class="row py-5">
                 <div class="col-1">
                 </div>
-                <div class="col-11 align-self-start"> 
+                <div class="col-8 align-self-start"> 
                     <h1 class="title text-capitalize fontSizeWelcome">Bienvenue, <?= $nameUser ?></h1>
                     <h5 class="fw-light fst-italic text-secondary">Gestionnaire de materiel</h5>
-                    <p><?= $content ?></p>
-                </div> 
+                </div>
             </div>
             <!-- EndTitle -->
 
@@ -45,7 +44,7 @@
                 <div class="col-1"></div>
                 <!-- Graph Black -->
                 <div class="col-2 px-4">
-                    <div class="card graphBlack text-white text-center graphCorner shadow">
+                    <div class="card graphBlack text-white text-center graphCorner shadow-sm">
                         <div class="card-body">
                             <p class="card-subtitle text-muted">Outils Réservés: </p>
                             <h3 class="card-title"><a href="#" class="link link-light text-decoration-none">###</a></h3>
@@ -57,7 +56,7 @@
 
                 <!-- Graph Yellow -->
                 <div class="col-2 px-4">
-                    <div class="card graphYellow text-white text-center graphCorner shadow">
+                    <div class="card graphYellow text-white text-center graphCorner shadow-sm">
                         <div class="card-body">
                             <p class="card-subtitle text-muted">Stock Total Restant: </p>
                             <h3 class="card-title"><a href="#" class="link link-light text-decoration-none">###</a></h3>
@@ -69,7 +68,7 @@
 
                 <!-- Graph Orange -->
                 <div class="col-2 px-4">
-                    <div class="card graphOrange text-white text-center graphCorner shadow">
+                    <div class="card graphOrange text-white text-center graphCorner shadow-sm">
                         <div class="card-body">
                             <p class="card-subtitle text-muted">Stock Faible: </p>
                             <h3 class="card-title"><a href="#" class="link link-light text-decoration-none">###</a></h3>
@@ -81,7 +80,7 @@
 
                 <!-- Graph Red -->
                 <div class="col-2 px-4">
-                    <div class="card graphRed text-white text-center graphCorner shadow">
+                    <div class="card graphRed text-white text-center graphCorner shadow-sm">
                         <div class="card-body">
                             <p class="card-subtitle text-muted">Rupture de Stock: </p>
                             <h3 class="card-title"><a href="#" class="link link-light text-decoration-none">###</a></h3>
@@ -93,12 +92,39 @@
             </div>
             <!-- EndGraph -->
 
+            <!-- Items List -->
+            <div class="row mt-5 pt-5">
+                <div class="col-1"></div>
+                <div class="col-3">
+                    <h3>Liste d'items: </h3>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-1"></div>
+                <div class="col-8">
+                    <table class="table table-hover table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Stock</th>
+                                <th scope="col">Quantité</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?= $content ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- EndItems List -->
+
             <!-- Footer -->
             <div class="row pt-5">
                 <div class="col-1"></div>
                 <div class="col-3">
                     <footer id="piedBlog">
-                        Blog réalisé avec PHP, HTML5 et CSS.
                     </footer>
                 </div>
             </div>

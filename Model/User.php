@@ -28,7 +28,7 @@ class User extends Model {
     }
 
     /** 
-     * @param array of 1 string
+     * @param array $username of 1 string
      * 
      * @return bool
      * True if $username = $usernameRetrieved

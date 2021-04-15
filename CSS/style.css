@@ -1,3 +1,4 @@
+/* Background */
 .loginBackground {
     background-image: url('../Img/blurred-ping-pong-table.jpg');
     background-repeat: no-repeat;
@@ -5,6 +6,10 @@
 }
 
 .mainBackground {
+    background: linear-gradient(to right, #ededed 80%, #ffff 20%);;
+}
+
+.listBackground {
     background-color: #ededed;
 }
 
@@ -43,8 +48,29 @@ body {
 }
 
 
-
-
 .graphCorner {
     border-radius: 1rem;
 }
+
+
+/* pills color */
+.pillsGreen {
+    background-color: #a1ae25;
+}
+
+.pillsYellow {
+    background-color: #fdc029;
+}
+
+.pillsOrange {
+    background-color: #df861d;
+}
+
+.pillsRed {
+    background-color: #aa3d01;
+}
+
+.textPillsOrange {
+    color: #df861d;
+}
+

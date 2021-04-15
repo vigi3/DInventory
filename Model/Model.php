@@ -6,9 +6,10 @@ abstract class Model {
 
 
     //Request to db with parameters or without 
-    public function RequestDB($sql, $params = null): array {
+    public function RequestDB($sql, $params = null) 
+    {
         if($params == null ){
-            $request = $this->getDatabase()->query($sql);
+            $resultRequest = $this->getDatabase()->query($sql);
         }
         else {
             $request = $this->getDatabase()->prepare($sql);
