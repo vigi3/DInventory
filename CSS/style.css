@@ -6,15 +6,11 @@
 }
 
 .mainBackground {
-    background: linear-gradient(to right, #ededed 80%, #ffff 20%);;
+    background: linear-gradient(to right, #f9f9f9 80%, #ffff 20%);;
 }
 
 .listBackground {
     background-color: #ededed;
-}
-
-body {
-    font-family: 'Oswald', sans-serif;
 }
 
 .margTopContainer {
@@ -30,26 +26,33 @@ body {
     font-size: 4em;
 }
 
+.navbarColor {
+    background-color: rgba(46, 47, 54, 0.9);
+}
+
 /* Graph color */
 .graphBlack {
-    background-color: #171820;
+    background: linear-gradient(to bottom right, rgba(46, 47, 54, 0.5) 70%, rgba(46, 47, 54, 0.9) 30%);
+
 }
 
 .graphYellow {
-    background-color: #fdc029;
+    background: linear-gradient(to bottom right, rgba(253, 192, 41, 0.5) 70%, rgba(253, 192, 41, 0.9) 30%);
 }
 
 .graphOrange {
-    background-color: #df861d;
+    background: linear-gradient(to bottom right, rgba(223, 134, 29, 0.5) 70%, rgba(223, 134, 29, 0.9) 30%);
+
 }
 
 .graphRed {
-    background-color: #aa3d01;
+    background: linear-gradient(to bottom right, rgba(170, 61, 1, 0.5) 70%, rgba(170, 61, 1, 0.9) 30%);
+
 }
 
 
 .graphCorner {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 
@@ -59,24 +62,94 @@ body {
 }
 
 .pillsYellow {
-    background-color: #fdc029;
+    background-color: rgba(253, 192, 41, 0.9);
 }
 
 .pillsOrange {
-    background-color: #df861d;
+    background-color: rgba(223, 134, 29, 0.9);
 }
 
 .pillsRed {
-    background-color: #aa3d01;
+    background-color: rgba(170, 61, 1, 0.9);
 }
 
+/* Text pills color */
 .textPillsOrange {
-    color: #df861d;
+    color: #c26e02;
+}
+
+.textPillsYellow {
+    color: #fdc029;
+}
+
+.textPillsGreen {
+    color: #357623;
+}
+
+.textPillsRed {
+    color: #aa3d01;
+}
+
+.pillsBadge {
+    font-size: 0.75em;
+    font-weight: bold;
+    width: 8em;
+    border-style: hidden;
+    border-radius: 0.80rem;
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin: 0;
+
 }
 
 .hoverNav:hover {
     color: #df861d;
 }
+
+/* Font */
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+.fontBodoni {
+    font-family: 'Bodoni Moda', serif;
+    color: #5e6668;
+}
+
+.fontColorItem {
+    color: #5e6668;
+}
+
+/* Hover Row Table Item */
+.itemHover:hover {
+    border-style: hidden;
+    background-color: #ffff;
+    border-radius: 0.50rem;
+    box-shadow: 0.5rem 1rem 3rem rgba(0, 0, 0, .175);
+}
+
+.itemHover:hover td:first-child {
+    border-top-left-radius: 0.50rem;
+    border-bottom-left-radius: 0.50rem;
+}
+
+.itemHover:hover td:last-child {
+    border-top-right-radius: 0.50rem;
+    border-bottom-right-radius: 0.50rem;
+}
+
+table tr td{
+    border-spacing:10px 10px;
+}
+
+
+
+
+
+
+
 
 
 

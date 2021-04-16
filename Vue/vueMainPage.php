@@ -1,25 +1,27 @@
 
 <?php $this->nameUser = $_SESSION['name'];?>
+<?php $this->stockLeftTotal = $stockLeftT['stockLeftTo'] ?>
+<?php $this->amountItemLow = $numberItemLow['stockLowAmount'] ?>
 
-<h2 id="titleTest"><?php $this->title = $title['title'] ?></h2>
+
 
 <?php foreach ($itemList as $oneItem): ?>
 
-    <tr>
-        <td><?= $oneItem['nameI'] ?></td>
-        <td><?= $oneItem['typeI'] ?></td>
-        <td>
+    <tr class="itemHover align-middle">
+        <td class="py-3"><?= $oneItem['nameI'] ?></td>
+        <td class="py-3"><?= $oneItem['typeI'] ?></td>
+        <td class="py-3">
             <?php if ($oneItem['stateI'] == 3): ?>
-                <span class="badge rounded-pill pillsGreen">En Stock</span>
+                <p class="pillsBadge pillsGreen textPillsGreen text-center">En Stock</p>
             <?php elseif ($oneItem['stateI'] == 2): ?> 
-                <span class="badge rounded-pill textPillsOrange pillsYellow">Stock Moitié</span>
+                <p class="pillsBadge textPillsOrange pillsYellow text-center">Stock Moitié</p>
             <?php elseif ($oneItem['stateI'] == 1): ?> 
-                <span class="badge rounded-pill pillsOrange">Stock Faible</span>
+                <p class="pillsBadge pillsOrange textPillsYellow text-center">Stock Faible</p>
             <?php elseif ($oneItem['stateI'] == 0): ?> 
-                <span class="badge rounded-pill textPillsOrange pillsRed">Stock vide</span>        
+                <p class="pillsBadge textPillsOrange pillsRed text-center">Stock vide</p>        
             <?php endif ?>    
         </td>
-        <td><?= $oneItem['stockI'] ?></td>
-        <td><?= $oneItem['initStock'] ?></td>
+        <td class="py-3"><?= $oneItem['stockI'] ?></td>
+        <td class="py-3"><?= $oneItem['initStock'] ?></td>
     </tr>
 <?php endforeach; ?>

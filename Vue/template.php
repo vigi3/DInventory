@@ -10,6 +10,8 @@
         <!-- Google Font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&display=swap" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@900&display=swap" rel="stylesheet">
 
         <!-- My CSS -->
         <link rel="stylesheet" href="CSS/style.css">
@@ -17,8 +19,8 @@
     </head>
     <body class="vh-100 mainBackground">
         <!-- NavBar -->
-        <nav class="nav d-inline-flex flex-column nav-justified bg-dark vh-100 pt-5 shadow-sm" id="sticky-sidebar"> 
-            <a class="nav-link link-light" aria-current="page" href="#"><h2><i class="bi bi-app hoverNav"></i></i></h1></a> <!-- Home -->
+        <nav class="nav d-inline-flex flex-column nav-justified navbarColor vh-100 pt-5 shadow-sm" id="sticky-sidebar"> 
+            <a class="nav-link link-light" aria-current="page" href="<?= "index.php?action=MainPage"?>"><h2><i class="bi bi-app hoverNav"></i></i></h1></a> <!-- Home -->
             <a class="nav-link link-light" href="#"><h2><i class="bi bi-box hoverNav"></i></h2></a> <!-- Products -->
             <a class="nav-link link-light" href="#"><h2><i class="bi bi-calendar3 hoverNav"></i></h2></a> <!-- Reservation -->
             <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-plus-circle hoverNav"></i></h2></a> <!-- Add product -->
@@ -33,7 +35,7 @@
                 <div class="col-1">
                 </div>
                 <div class="col-8 align-self-start"> 
-                    <h1 class="title text-capitalize fontSizeWelcome">Bienvenue, <?= $nameUser ?></h1>
+                    <h1 class="title text-capitalize fontSizeWelcome fontBodoni">Bienvenue, <?= $nameUser ?></h1>
                     <h5 class="fw-light fst-italic text-secondary">Gestionnaire de materiel</h5>
                 </div>
             </div>
@@ -44,10 +46,10 @@
                 <div class="col-1"></div>
                 <!-- Graph Black -->
                 <div class="col-2 px-4">
-                    <div class="card graphBlack text-white text-center graphCorner shadow-sm">
+                    <div class="card border-0 graphBlack text-white text-center graphCorner">
                         <div class="card-body">
                             <p class="card-subtitle text-muted">Outils Réservés: </p>
-                            <h3 class="card-title"><a href="#" class="link link-light text-decoration-none">###</a></h3>
+                            <h3 class="card-title fw-bold">###</h3>
                             <p class="card-subtitle text-muted">Items</p>
                         </div>
                     </div>  
@@ -56,10 +58,10 @@
 
                 <!-- Graph Yellow -->
                 <div class="col-2 px-4">
-                    <div class="card graphYellow text-white text-center graphCorner shadow-sm">
+                    <div class="card border-0 graphYellow text-white text-center graphCorner">
                         <div class="card-body">
                             <p class="card-subtitle text-muted">Stock Total Restant: </p>
-                            <h3 class="card-title"><a href="#" class="link link-light text-decoration-none">###</a></h3>
+                            <h3 class="card-title fw-bold textPillsYellow"><?= $stockLeftTotal ?></h3>
                             <p class="card-subtitle text-muted">Items</p>
                         </div>
                     </div>  
@@ -68,10 +70,10 @@
 
                 <!-- Graph Orange -->
                 <div class="col-2 px-4">
-                    <div class="card graphOrange text-white text-center graphCorner shadow-sm">
+                    <div class="card border-0 graphOrange text-white text-center graphCorner">
                         <div class="card-body">
-                            <p class="card-subtitle text-muted">Stock Faible: </p>
-                            <h3 class="card-title"><a href="#" class="link link-light text-decoration-none">###</a></h3>
+                            <p class="card-subtitle text-muted ">Stock Faible: </p>
+                            <h3 class="card-title fw-bold textPillsOrange"><?= $amountItemLow ?></h3>
                             <p class="card-subtitle text-muted">Items</p>
                         </div>
                     </div>  
@@ -80,10 +82,10 @@
 
                 <!-- Graph Red -->
                 <div class="col-2 px-4">
-                    <div class="card graphRed text-white text-center graphCorner shadow-sm">
+                    <div class="card border-0 graphRed text-white text-center graphCorner">
                         <div class="card-body">
                             <p class="card-subtitle text-muted">Rupture de Stock: </p>
-                            <h3 class="card-title"><a href="#" class="link link-light text-decoration-none">###</a></h3>
+                            <h3 class="card-title fw-bold textPillsRed">###</h3>
                             <p class="card-subtitle text-muted">Items</p>
                         </div>
                     </div>  
@@ -102,17 +104,17 @@
             <div class="row pt-5">
                 <div class="col-1"></div>
                 <div class="col-8">
-                    <table class="table table-hover table-borderless">
+                    <table class="table table-borderless">
                         <thead>
                             <tr>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Stock</th>
-                                <th scope="col">Quantité</th>
+                                <th class="py-4" scope="col">Nom</th>
+                                <th class="py-4" scope="col">Type</th>
+                                <th class="py-4" scope="col">Status</th>
+                                <th class="py-4" scope="col">Stock</th>
+                                <th class="py-4" scope="col">Quantité</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="fontColorItem">
                             <?= $content ?>
                         </tbody>
                     </table>

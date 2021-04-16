@@ -13,19 +13,21 @@ class MainPageController {
     public function __construct()
     {
         $this->item = new Item();
-        $this->setStateOfStock();
     }
 
 
-    public function mainPageVue() 
+    public function mainPageVue(): void 
     {
         session_start();
         $_SESSION['title'] = 'Accueil';
         $_SESSION['name'] = $this->getName($_POST['username']);
         $itemList = $this->item->getAllItems();
+        $totalStockLeft = $this->getTotalStockLeftItems();
+        $numberItemLow = $this->getItemsWithLowStock();
+        $this->setStateOfStock(); 
+        $this->getItemsWithLowStock();
         $vue = new Vue('MainPage');
-        $vue->generate(array('title'=>$this->titleArray, 'itemList'=>$itemList));
-
+        $vue->generate(array('title'=>$this->titleArray, 'itemList'=>$itemList, 'stockLeftT'=>$totalStockLeft, 'numberItemLow'=>$numberItemLow));
     }
 
     public function getName(string $username): string
@@ -42,6 +44,17 @@ class MainPageController {
         return $titleMainPage;
     }
 
+
+    /** 
+     * Set the state depending on the stock quantity and stock left 
+     * 0 = Out of Stock
+     * 1 = Low
+     * 2 = half
+     * 3 = In Stock
+     * 
+     * @return void
+     * 
+    */
     public function setStateOfStock(): void
     {
         $itemList = $this->item->getAllItems();
@@ -50,7 +63,8 @@ class MainPageController {
             $stockDiff = intval(($OneItem['stockI'] * 100) / $OneItem['initStock']);
             $intId = $OneItem['id'];
 
-            if ($stockDiff < 100 && $stockDiff > 50) {
+            if ($stockDiff < 100 && $stockDiff > 50) 
+            {
                 $intState = 3;
                 $this->item->setStateItem($intState, $intId);
             } 
@@ -70,6 +84,42 @@ class MainPageController {
                 $this->item->setStateItem($intState, $intId);
             }   
         }
+    }
+
+    /** 
+     * 
+     * @return array $stockLeftArray
+     * Get the total amount of stock Left
+     * 
+    */
+    public function getTotalStockLeftItems(): array
+    {
+        $itemList = $this->item->getAllItems();
+        $stockLeftT = 0;
+        foreach ($itemList as $OneItem) 
+        {
+            $stockLeftT += $OneItem['stockI'];
+        }
+        $stockLeftArray = array('stockLeftTo'=>$stockLeftT);
+        return $stockLeftArray;
+    }
+
+    /** 
+     * 
+     * @return array $stockLeftArray
+     * Get the total amount of stock Left
+     * 
+    */
+    public function getItemsWithLowStock(): array
+    {
+        $itemListLowStock = $this->item->getItemLowStock();
+        $countItems = 0;
+        foreach ($itemListLowStock as $OneItemLowStock) 
+        {
+            $countItems += 1;
+        }
+        $countItemsArray = array('stockLowAmount'=>$countItems);
+        return $countItemsArray;
     }
 
 

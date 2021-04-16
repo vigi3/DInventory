@@ -15,7 +15,12 @@ class Vue {
 
     public function generate($data) {
         $content = $this->generateFileWithArray($this->file, $data);
-        $vue = $this->generateFileWithArray('Vue/template.php', array('title'=>$this->title, 'nameUser'=>$this->nameUser, 'name'=>$this->name, 'content'=>$content));
+        $vue = $this->generateFileWithArray('Vue/template.php', array(
+                                                                        'title'=>$this->title, 
+                                                                        'nameUser'=>$this->nameUser, 
+                                                                        'stockLeftTotal'=>$this->stockLeftTotal, 
+                                                                        'amountItemLow'=>$this->amountItemLow, 
+                                                                        'content'=>$content));
 
         echo $vue;
     }

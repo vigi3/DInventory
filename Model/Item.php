@@ -33,15 +33,11 @@ class Item extends Model {
     }
 
     /** 
-     * @param array $stateInt
-     * 0 = Out of Stock
-     * 1 = Low
-     * 2 = half
-     * 3 = In Stock
-     * 
-     * @param array $id id item 
+     * @param int $stateInt state of the stock quantity
+     * @param int $id id item
      * 
      * @return void
+     * set state of stock for one item
      * 
     */
     public function setStateItem(int $stateInt, int $id): void 
@@ -49,5 +45,29 @@ class Item extends Model {
         $sql = 'UPDATE materiels SET stateItem=? WHERE idMateriels=?';
         $keyValue = array($stateInt, $id);
         $request = $this->RequestDB($sql, $keyValue);
+    }
+
+    /** 
+     * @return array $itemLowStockList 
+     * Array of stockItem quantity with Low Stock
+     * 
+    */
+    public function getItemLowStock()
+    {
+        $sql = 'SELECT stockItem AS stockI FROM materiels WHERE stateItem = 1';
+        $itemLowStockList = $this->RequestDB($sql);
+        return $itemLowStockList;
+    }
+
+    /** 
+     * @return array $itemOutOfStockList 
+     * Array of stockItem quantity which are Out of Stock
+     * 
+    */
+    public function getItemOutOfStock()
+    {
+        $sql = 'SELECT stockItem AS stockI FROM materiels WHERE stateItem = 0';
+        $itemOutOfStockList = $this->RequestDB($sql);
+        return $itemOutOfStockList;
     }
 }
