@@ -4,9 +4,7 @@
 <?php $this->amountItemLow = $numberItemLow['stockLowAmount'] ?>
 
 
-
 <?php foreach ($itemList as $oneItem): ?>
-
     <tr class="itemHover align-middle">
         <td class="py-3"><?= $oneItem['nameI'] ?></td>
         <td class="py-3"><?= $oneItem['typeI'] ?></td>

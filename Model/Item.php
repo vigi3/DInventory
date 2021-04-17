@@ -18,6 +18,19 @@ class Item extends Model {
     }
 
     /** 
+     * 
+     * @return objet $itemsList
+     * 6 items ordered by id Ascending
+     * 
+    */
+    public function getNumberOfItems() 
+    {
+        $sql = 'SELECT idMateriels AS id, nameItem AS nameI, typeItem AS typeI, stateItem AS stateI, stockItem AS stockI, initStock FROM materiels ORDER BY idMateriels ASC LIMIT 6';
+        $itemsList = $this->RequestDB($sql);
+        return $itemsList;
+    }
+
+    /** 
      * @param array $stockLeft Stock left
      * Set new Stock
      * 

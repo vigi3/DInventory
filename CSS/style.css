@@ -140,10 +140,19 @@ body {
     border-bottom-right-radius: 0.50rem;
 }
 
-table tr td{
-    border-spacing:10px 10px;
+
+/* Table position */
+td {
+    width: 25%;    
 }
 
+.tableOverflow {
+    overflow: hidden;
+}
+
+.rowTableHeight {
+    height: 35%;
+}
 
 
 

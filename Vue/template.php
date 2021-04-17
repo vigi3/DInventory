@@ -29,7 +29,7 @@
         </nav>  
         <!-- EndNavBar -->
         <!-- Container -->
-        <div class="container-fluid">
+        <div class="container-fluid h-100">
             <!-- Title -->
             <div class="row py-5">
                 <div class="col-1">
@@ -95,13 +95,13 @@
             <!-- EndGraph -->
 
             <!-- Items List -->
-            <div class="row mt-5 pt-5">
+            <div class="row mt-3 pt-5">
                 <div class="col-1"></div>
                 <div class="col-3">
-                    <h3>Liste d'items: </h3>
+                    <h5>Liste d'items: </h5>
                 </div>
             </div>
-            <div class="row pt-5">
+            <div class="row tableOverflow rowTableHeight pt-3">
                 <div class="col-1"></div>
                 <div class="col-8">
                     <table class="table table-borderless">
@@ -114,7 +114,7 @@
                                 <th class="py-4" scope="col">Quantité</th>
                             </tr>
                         </thead>
-                        <tbody class="fontColorItem">
+                        <tbody class="fontColorItem h-100">
                             <?= $content ?>
                         </tbody>
                     </table>
@@ -123,7 +123,7 @@
             <!-- EndItems List -->
 
             <!-- Footer -->
-            <div class="row pt-5">
+            <div class="row mb-5 pt-5">
                 <div class="col-1"></div>
                 <div class="col-3">
                     <footer id="piedBlog">
