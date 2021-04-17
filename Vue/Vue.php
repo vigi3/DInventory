@@ -3,9 +3,10 @@
 class Vue {
 
     private string $file;
-    private $content;
-    private $name;
-    private $title;
+    private ?string $focusNavbarHome = null; // ?string means string default value can be null 
+    private ?string $focusNavbarReserv = null;
+    private string $title;
+    private string $subtitle;
     private $nameUser;
 
     public function __construct($action)
@@ -17,9 +18,10 @@ class Vue {
         $content = $this->generateFileWithArray($this->file, $data);
         $vue = $this->generateFileWithArray('Vue/template.php', array(
                                                                         'title'=>$this->title, 
+                                                                        'subtitle'=>$this->subtitle,
                                                                         'nameUser'=>$this->nameUser, 
-                                                                        'stockLeftTotal'=>$this->stockLeftTotal, 
-                                                                        'amountItemLow'=>$this->amountItemLow, 
+                                                                        'focusNavbarHome'=>$this->focusNavbarHome,
+                                                                        'focusNavbarReserv'=>$this->focusNavbarReserv,
                                                                         'content'=>$content));
 
         echo $vue;

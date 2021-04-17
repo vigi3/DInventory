@@ -6,7 +6,6 @@ require_once 'Vue/Vue.php';
 
 class MainPageController {
 
-    private ?string $nameUser = null;
     private array $titleArray = array('title'=>'Accueil');
     private Item $item;
 
@@ -19,15 +18,21 @@ class MainPageController {
     public function mainPageVue(): void 
     {
         session_start();
-        $_SESSION['title'] = 'Accueil';
-        $_SESSION['name'] = $this->getName($_POST['username']);
+        if (!isset($_SESSION['name'])) 
+        {
+            $_SESSION['name'] = $this->getName($_POST['username']);
+        }
         $itemList = $this->item->getAllItems();
         $totalStockLeft = $this->getTotalStockLeftItems();
         $numberItemLow = $this->getItemsWithLowStock();
+        $numberOSItem = $this->getOutOfStockItems();
         $this->setStateOfStock(); 
-        $this->getItemsWithLowStock();
         $vue = new Vue('MainPage');
-        $vue->generate(array('title'=>$this->titleArray, 'itemList'=>$itemList, 'stockLeftT'=>$totalStockLeft, 'numberItemLow'=>$numberItemLow));
+        $vue->generate(array('title'=>$this->titleArray, 
+                             'itemList'=>$itemList,
+                             'stockLeftT'=>$totalStockLeft,
+                             'numberItemLow'=>$numberItemLow, 
+                             'numberOSItem'=>$numberOSItem));
     }
 
     public function getName(string $username): string
@@ -106,8 +111,8 @@ class MainPageController {
 
     /** 
      * 
-     * @return array $stockLeftArray
-     * Get the total amount of stock Left
+     * @return array $countItemsLTArray
+     * Get the total amount of item with Low Stock
      * 
     */
     public function getItemsWithLowStock(): array
@@ -118,8 +123,26 @@ class MainPageController {
         {
             $countItems += 1;
         }
-        $countItemsArray = array('stockLowAmount'=>$countItems);
-        return $countItemsArray;
+        $countItemsLTArray = array('stockLowAmount'=>$countItems);
+        return $countItemsLTArray;
+    }
+
+    /** 
+     * 
+     * @return array $countItemsOSArray
+     * Get the total amount of item Out Of Stock
+     * 
+    */
+    public function getOutOfStockItems(): array
+    {
+        $itemListOutOfStock = $this->item->getItemOutOfStock();
+        $countItems = 0;
+        foreach ($itemListOutOfStock as $OneItemOutOfStock) 
+        {
+            $countItems += 1;
+        }
+        $countItemsOSArray = array('OutOfstockAmount'=>$countItems);
+        return $countItemsOSArray;
     }
 
 

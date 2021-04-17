@@ -2,6 +2,7 @@
 
 require_once 'Controller/UserLoginController.php';
 require_once 'Controller/MainPageController.php';
+require_once 'Controller/ReservationController.php';
 require_once 'Vue/Vue.php';
 
 
@@ -9,11 +10,13 @@ class Router {
 
     private UserLoginController $userLogCtrl;
     private MainPageController $mainPageLogCtrl;
+    private ReservationController $reservLogCtrl;
 
     public function __construct()
     {
         $this->userLogCtrl = new UserLoginController();
         $this->mainPageLogCtrl = new MainPageController();
+        $this->reservLogCtrl = new ReservationController();
     }
 
     public function routerRequest()
@@ -32,11 +35,23 @@ class Router {
             }
             else if (isset($_GET['action'])) 
             {
-                // if($_GET['action'] == 'UserLogin')
+                switch ($_GET['action']) 
+                {
+                    case 'MainPage':
+                        $this->mainPageLogCtrl->mainPageVue();
+                        break;
+                    case 'Reservation':
+                        $this->reservLogCtrl->mainPageVue();
+                        break;
+                }
+                // if($_GET['action'] == 'MainPage')
                 // {
-                //     echo 'Bravo';
+                //     $this->mainPageLogCtrl->mainPageVue();
                 // }
-
+                // elseif ($_GET['action'] == 'Reservation') 
+                // {
+                //     # code...
+                // }
             }
             else 
             {
