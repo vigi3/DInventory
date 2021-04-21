@@ -18,6 +18,20 @@ class User extends Model {
     }
 
     /** 
+     * @param string username
+     * getId by Username after Login
+     * 
+     * @return $IdRetrieved
+     * The id of a user
+    */
+    public function getId(string $username) {
+        $usernameArray = array($username);
+        $sql = 'SELECT idUser FROM user WHERE Username=?';
+        $IdRetrieved = $this->RequestDB($sql, $usernameArray);
+        return $IdRetrieved;
+    }
+
+    /** 
      * @return User object $userCreationReq
      * The new User created
     */

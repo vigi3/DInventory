@@ -31,6 +31,22 @@ class Item extends Model {
     }
 
     /** 
+     * 
+     * @param string $nameItem
+     * 
+     * @return Array $itemIdArray
+     * The id of the item
+     * 
+    */
+    public function getIdItemsByName(string $nameItem) 
+    {
+        $nameItemArray = array($nameItem);
+        $sql = 'SELECT idMateriels AS id FROM materiels WHERE nameItem=?';
+        $itemIdArray = $this->RequestDB($sql, $nameItemArray);
+        return $itemIdArray;
+    }
+
+    /** 
      * @param array $stockLeft Stock left
      * Set new Stock
      * 

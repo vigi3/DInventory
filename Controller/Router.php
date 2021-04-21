@@ -33,7 +33,7 @@ class Router {
                     $this->userLogCtrl->userLogVue();
                 }
             }
-            else if (isset($_GET['action'])) 
+            else if (isset($_GET['action']) && !isset($_POST['submitReserv'])) 
             {
                 switch ($_GET['action']) 
                 {
@@ -44,14 +44,11 @@ class Router {
                         $this->reservLogCtrl->mainPageVue();
                         break;
                 }
-                // if($_GET['action'] == 'MainPage')
-                // {
-                //     $this->mainPageLogCtrl->mainPageVue();
-                // }
-                // elseif ($_GET['action'] == 'Reservation') 
-                // {
-                //     # code...
-                // }
+            }
+            else if (isset($_POST['submitReserv'])) 
+            {
+                $this->reservLogCtrl->setReservation();
+                $this->mainPageLogCtrl->mainPageVue();
             }
             else 
             {

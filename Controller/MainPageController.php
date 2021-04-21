@@ -17,10 +17,14 @@ class MainPageController {
 
     public function mainPageVue(): void 
     {
-        session_start();
+        if (!isset($_SESSION)) 
+        {
+            session_start();
+        }
         if (!isset($_SESSION['name'])) 
         {
             $_SESSION['name'] = $this->getName($_POST['username']);
+            $_SESSION['id'] = $this->getIdUSer($_POST['username']);
         }
         $itemList = $this->item->getAllItems();
         $totalStockLeft = $this->getTotalStockLeftItems();
@@ -41,6 +45,13 @@ class MainPageController {
         $UserInSession = new User();
         $nameUser = $UserInSession->getName($usernameArray);
         return $nameUser[0];
+    }
+
+    public function getIdUSer(string $username): int
+    {
+        $UserNameInSession = new User();
+        $idUser = $UserNameInSession->getId($username);
+        return $idUser[0];
     }
 
     public function getTitlePage(): string
