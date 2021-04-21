@@ -3,6 +3,7 @@
 require_once 'Controller/UserLoginController.php';
 require_once 'Controller/MainPageController.php';
 require_once 'Controller/ReservationController.php';
+require_once 'Controller/ItemController.php';
 require_once 'Vue/Vue.php';
 
 
@@ -11,12 +12,14 @@ class Router {
     private UserLoginController $userLogCtrl;
     private MainPageController $mainPageLogCtrl;
     private ReservationController $reservLogCtrl;
+    private ItemController $itemCtrl;
 
     public function __construct()
     {
         $this->userLogCtrl = new UserLoginController();
         $this->mainPageLogCtrl = new MainPageController();
         $this->reservLogCtrl = new ReservationController();
+        $this->itemCtrl = new ItemController();
     }
 
     public function routerRequest()
@@ -43,6 +46,8 @@ class Router {
                     case 'Reservation':
                         $this->reservLogCtrl->mainPageVue();
                         break;
+                    case 'ItemList':
+                        $this->itemCtrl->mainPageVue();    
                 }
             }
             else if (isset($_POST['submitReserv'])) 
