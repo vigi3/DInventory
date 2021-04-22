@@ -6,18 +6,20 @@ require_once 'Vue/Vue.php';
 
 class ItemController {
 
-    private Reservation $reservation;
     private Item $item;
 
     public function __construct()
     {
-        $this->reservation = new Reservation();
         $this->item = new Item();
     }
 
     public function mainPageVue(): void 
     {
         session_start();
+        if (!$_SESSION['name']) 
+        {
+            header("Location: index.php");
+        }
         $ItemLongList = $this->item->getAllItems();
         $vue = new Vue('itemList');
         $vue->generate(array('ItemLongList'=>$ItemLongList));

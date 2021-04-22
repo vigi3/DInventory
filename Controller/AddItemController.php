@@ -18,6 +18,10 @@ class AddItemController {
         if (!isset($_SESSION)) 
         {
             session_start();
+            if (!$_SESSION['name']) 
+            {
+                header("Location: index.php");
+            }
         }    
         $ItemList = $this->item->getAllItems();
         $vue = new Vue('AddItem');

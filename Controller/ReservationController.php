@@ -19,6 +19,10 @@ class ReservationController {
     public function mainPageVue(): void 
     {
         session_start();
+        if (!$_SESSION['name']) 
+        {
+            header("Location: index.php");
+        }
         $searchItemList = $this->item->getAllItems();
         $vue = new Vue('Reservation');
         $vue->generate(array('searchItemList'=>$searchItemList));

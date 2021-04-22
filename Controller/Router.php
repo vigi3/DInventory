@@ -5,6 +5,7 @@ require_once 'Controller/MainPageController.php';
 require_once 'Controller/ReservationController.php';
 require_once 'Controller/ItemController.php';
 require_once 'Controller/AddItemController.php';
+require_once 'Controller/LogOutController.php';
 require_once 'Vue/Vue.php';
 
 
@@ -15,6 +16,7 @@ class Router {
     private ReservationController $reservLogCtrl;
     private ItemController $itemCtrl;
     private AddItemController $addItemCtrl;
+    private LogOutController $logOutCtrl;
 
     public function __construct()
     {
@@ -23,6 +25,7 @@ class Router {
         $this->reservLogCtrl = new ReservationController();
         $this->itemCtrl = new ItemController();
         $this->addItemCtrl = new AddItemController();
+        $this->logOutCtrl = new LogOutController();
     }
 
     public function routerRequest()
@@ -54,7 +57,10 @@ class Router {
                         break;
                     case 'AddItem':
                         $this->addItemCtrl->mainPageVue();
-                        break;       
+                        break;
+                    case 'LogOut';
+                        $this->logOutCtrl->logOutUser();
+                        $this->userLogCtrl->userLogVue();           
                 }
             }
             else if (isset($_POST['submitReserv'])) 
