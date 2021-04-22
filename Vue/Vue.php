@@ -6,6 +6,7 @@ class Vue {
     private ?string $focusNavbarHome = null; // ?string means string default value can be null 
     private ?string $focusNavbarReserv = null;
     private ?string $focusNavbarList = null;
+    private ?string $focusNavbarAddItem = null;
     private string $title;
     private string $subtitle;
     private $nameUser;
@@ -24,6 +25,7 @@ class Vue {
                                                                         'focusNavbarHome'=>$this->focusNavbarHome,
                                                                         'focusNavbarReserv'=>$this->focusNavbarReserv,
                                                                         'focusNavbarList'=>$this->focusNavbarList,
+                                                                        'focusNavbarAddItem'=>$this->focusNavbarAddItem,
                                                                         'content'=>$content));
 
         echo $vue;

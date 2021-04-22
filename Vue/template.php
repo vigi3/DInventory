@@ -22,7 +22,7 @@
             <a class="nav-link link-light <?= $focusNavbarHome ?>" aria-current="page" href="<?= "index.php?action=MainPage"?>"><h2><i class="bi bi-app hoverNav"></i></i></h1></a> <!-- Home -->
             <a class="nav-link link-light <?= $focusNavbarList ?>" href="<?= "index.php?action=ItemList"?>"><h2><i class="bi bi-box hoverNav"></i></h2></a> <!-- Products -->
             <a class="nav-link link-light <?= $focusNavbarReserv ?>" href="<?= "index.php?action=Reservation"?>"><h2><i class="bi bi-calendar3 hoverNav"></i></h2></a> <!-- Reservation -->
-            <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-plus-circle hoverNav"></i></h2></a> <!-- Add product -->
+            <a class="nav-link link-light <?= $focusNavbarAddItem ?>" href="<?= "index.php?action=AddItem"?>" aria-disabled="true"><h2><i class="bi bi-plus-circle hoverNav"></i></h2></a> <!-- Add product -->
             <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-person-x hoverNav"></i></h2></a> <!-- Log out -->
             <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-gear hoverNav"></i></h2></a> <!-- Setting/Add User -->
         </nav>  

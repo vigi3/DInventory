@@ -99,4 +99,23 @@ class Item extends Model {
         $itemOutOfStockList = $this->RequestDB($sql);
         return $itemOutOfStockList;
     }
+
+    /** 
+     *
+     * @param string $nameItem 
+     * @param string $nameTypeItem 
+     * @param int $stateItem 
+     * @param int $stockItem Stock left, will be equal at zero by default and calculated after posting form
+     * @param int $initialStock 
+     * 
+     * @return void  
+     * Add a new item
+     * 
+    */
+    public function CreateOneItem(string $nameItem, string $nameTypeItem, int $stateItem, int $stockItem, int $initialStock): void
+    {
+        $addItemParam = array($nameItem, $nameTypeItem, $stateItem, $stockItem, $initialStock);
+        $sql = 'INSERT INTO materiels (nameItem, typeItem, stateItem, stockItem, initStock) VALUES (?, ?, ?, ?, ?)';
+        $this->RequestDBWithInsert($sql, $addItemParam);
+    }
 }

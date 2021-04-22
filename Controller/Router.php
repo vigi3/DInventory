@@ -4,6 +4,7 @@ require_once 'Controller/UserLoginController.php';
 require_once 'Controller/MainPageController.php';
 require_once 'Controller/ReservationController.php';
 require_once 'Controller/ItemController.php';
+require_once 'Controller/AddItemController.php';
 require_once 'Vue/Vue.php';
 
 
@@ -13,6 +14,7 @@ class Router {
     private MainPageController $mainPageLogCtrl;
     private ReservationController $reservLogCtrl;
     private ItemController $itemCtrl;
+    private AddItemController $addItemCtrl;
 
     public function __construct()
     {
@@ -20,6 +22,7 @@ class Router {
         $this->mainPageLogCtrl = new MainPageController();
         $this->reservLogCtrl = new ReservationController();
         $this->itemCtrl = new ItemController();
+        $this->addItemCtrl = new AddItemController();
     }
 
     public function routerRequest()
@@ -36,7 +39,7 @@ class Router {
                     $this->userLogCtrl->userLogVue();
                 }
             }
-            else if (isset($_GET['action']) && !isset($_POST['submitReserv'])) 
+            else if (isset($_GET['action']) && !isset($_POST['submitReserv']) && !isset($_POST['submitAddItem'])) 
             {
                 switch ($_GET['action']) 
                 {
@@ -47,12 +50,21 @@ class Router {
                         $this->reservLogCtrl->mainPageVue();
                         break;
                     case 'ItemList':
-                        $this->itemCtrl->mainPageVue();    
+                        $this->itemCtrl->mainPageVue(); 
+                        break;
+                    case 'AddItem':
+                        $this->addItemCtrl->mainPageVue();
+                        break;       
                 }
             }
             else if (isset($_POST['submitReserv'])) 
             {
                 $this->reservLogCtrl->setReservation();
+                $this->mainPageLogCtrl->mainPageVue();
+            }
+            else if (isset($_POST['submitAddItem'])) 
+            {
+                $this->addItemCtrl->addNewItem();
                 $this->mainPageLogCtrl->mainPageVue();
             }
             else 

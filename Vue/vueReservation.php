@@ -15,7 +15,7 @@
                 <div id="dateStartHelp" class="form-text">Saisissez une date de Début de réservation</div>
             </div>
             <div class="mb-5">
-                <label for="exampleInputPassword1" class="form-label">Fin</label>
+                <label for="dateEnd" class="form-label">Fin</label>
                 <input type="date" class="form-control fontColorItem" id="dateEnd" name="dateEnd" aria-describedby="dateEndHelp">
                 <div id="dateEndHelp" class="form-text">Saisissez une date de Fin de réservation</div>
             </div>
