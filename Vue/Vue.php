@@ -7,6 +7,7 @@ class Vue {
     private ?string $focusNavbarReserv = null;
     private ?string $focusNavbarList = null;
     private ?string $focusNavbarAddItem = null;
+    private ?string $pieChart = null;
     private string $title;
     private string $subtitle;
     private $nameUser;
@@ -26,6 +27,7 @@ class Vue {
                                                                         'focusNavbarReserv'=>$this->focusNavbarReserv,
                                                                         'focusNavbarList'=>$this->focusNavbarList,
                                                                         'focusNavbarAddItem'=>$this->focusNavbarAddItem,
+                                                                        'pieChart'=>$this->pieChart,
                                                                         'content'=>$content));
 
         echo $vue;

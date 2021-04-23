@@ -3,6 +3,14 @@
 <?php $this->title = 'Bienvenue, '?>
 <?php $this->subtitle = 'Gestionnaire de materiel'?>
 <?php $this->focusNavbarHome = 'navbarFocus'?>
+<?php $this->pieChart = '<!-- Pie Chart -->
+<div class="pieChart">
+    <svg viewBox="0 0 300 300 " preserveAspectRatio="xMinYMin meet">
+        <circle r="120" cx="50%" cy="50%" />
+    </svg>
+</div>
+<!-- EndPie Chart -->'?>
+
 
 <!-- Graph -->
 <div class="row">
@@ -54,8 +62,25 @@
         </div>  
     </div>
     <!-- EndGraph Red -->
+
+    <div class="col-1"></div>
 </div>
 <!-- EndGraph -->
+
+<!-- Pie Chart -->
+<!-- <div class="pieChart">
+    <div>
+        <svg>
+            <circle r='60' cx='50%' cy='50%' />
+        </svg>
+    </div>
+    <div>
+        <svg>
+            <circle r='60' cx='50%' cy='50%' />
+        </svg>
+    </div>
+</div> -->
+<!-- EndPie Chart -->
 
 <!-- Items List -->
 <div class="row mt-3 pt-5">

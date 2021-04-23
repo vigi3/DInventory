@@ -27,6 +27,7 @@
             <a class="nav-link link-light" href="#" tabindex="-1" aria-disabled="true"><h2><i class="bi bi-gear hoverNav"></i></h2></a> <!-- Setting/Add User -->
         </nav>  
         <!-- EndNavBar -->
+        <?= $pieChart ?>
         <!-- Container -->
         <div class="container-fluid h-100">
             <!-- Title -->
