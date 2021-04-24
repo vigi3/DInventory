@@ -165,19 +165,28 @@ td {
 
 /* Pie Chart */
 
-.pieChart {
-    position: fixed;
-    right: 0%;
-    top: 5%;
-    max-width: 20%;
-    height: 35%;
-    
+
+
+@media (min-width: 768px) {
+    .pieChart {
+        position: fixed;
+        right: 0%;
+        top: 5%;
+        width: 20%;
+        height: 25%;
+    }
 }
 
-
-
-
-
+@media (min-width: 1920px) {
+    .pieChart {
+        position: fixed;
+        right: 0%;
+        top: 5%;
+        max-width: 20%;
+        height: 35%;
+        
+    }
+}
 
 
 

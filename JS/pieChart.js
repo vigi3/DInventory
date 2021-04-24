@@ -32,8 +32,7 @@ function drawChart()
 
             var options = {
                 title: 'Etat des stocks',
-                titleTextStyle:  {color: '#5e6668',
-                                  fontName: 'Bodoni Moda'}, 
+                titleTextStyle:  {color: '#5e6668', fontName: 'Bodoni Moda'}, 
                 backgroundColor: 'white',
                 colors:['#aa3d01','#df861d', '#fdc029', '#a1ae25'],
                 legend: {position: 'none'},
@@ -43,9 +42,10 @@ function drawChart()
 
             var chart = new google.visualization.PieChart(document.getElementsByClassName('pieChart')[0]);
 
-            chart.draw(data, options);
-                }).fail(function() {
+            chart.draw(data, options);}).fail(function() {
                     google.visualization.errors.addError(chartDiv, 
                       "Failed to load data for the chart.");
-                  });
+                  });                 
 }
+
+window.addEventListener('resize', drawChart);
