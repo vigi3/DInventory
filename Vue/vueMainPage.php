@@ -5,9 +5,7 @@
 <?php $this->focusNavbarHome = 'navbarFocus'?>
 <?php $this->pieChart = '<!-- Pie Chart -->
 <div class="pieChart">
-    <svg viewBox="0 0 300 300 " preserveAspectRatio="xMinYMin meet">
-        <circle r="120" cx="50%" cy="50%" />
-    </svg>
+    
 </div>
 <!-- EndPie Chart -->'?>
 

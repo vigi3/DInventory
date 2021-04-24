@@ -167,22 +167,13 @@ td {
 
 .pieChart {
     position: fixed;
-    right: 2%;
-    top: 10%;
+    right: 0%;
+    top: 5%;
     max-width: 20%;
     height: 35%;
+    
 }
 
-svg {
-    width: 100%;
-    height: 100%;
-}
-
-circle {
-    fill: yellowgreen;
-    stroke: #655;
-    stroke-width: 60;
-}
 
 
 

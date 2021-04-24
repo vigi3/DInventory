@@ -30,7 +30,7 @@
                 <input type="text" name="username" class="form-control" placeholder="name@example.com"><br>
                 <label for="password" class="form-label">Password:</label><br>
                 <input type="password" name="password" class="form-control"><br>
-                <input type="submit" value="Submit" name="submit" class="btn btn-secondary">
+                <input type="submit" value="Submit" name="submit" class="btn btn-secondary" onclick='loadPieChart()'>
               </form>
             </div>
           </div> 

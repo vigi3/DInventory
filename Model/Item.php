@@ -1,6 +1,7 @@
 <?php 
-
-require_once 'Model/Model.php';
+require_once __DIR__."/../config.php";
+require_once SITE_ROOT."/Model/Model.php";
+// require_once 'Model/Model.php';
 
 class Item extends Model {
 
@@ -98,6 +99,82 @@ class Item extends Model {
         $sql = 'SELECT stockItem AS stockI FROM materiels WHERE stateItem = 0';
         $itemOutOfStockList = $this->RequestDB($sql);
         return $itemOutOfStockList;
+    }
+
+    /** 
+     * @return array $itemHalfStockList 
+     * Array of stockItem quantity which are half Stock
+     * 
+    */
+    public function getItemHalfStock()
+    {
+        $sql = 'SELECT stockItem AS stockI FROM materiels WHERE stateItem = 2';
+        $itemHalfStockList = $this->RequestDB($sql);
+        return $itemHalfStockList;
+    }
+    
+    /** 
+     * @return array $itemFullStockList 
+     * Array of stockItem quantity which are full stock
+     * 
+    */
+    public function getItemFullStock()
+    {
+        $sql = 'SELECT stockItem AS stockI FROM materiels WHERE stateItem = 3';
+        $itemFullStockList = $this->RequestDB($sql);
+        return $itemFullStockList;
+    }
+
+    /** 
+     * @return array $itemObject 
+     * Array of stockItem quantity with Low Stock
+     * 
+    */
+    public function getItemLowStockPiechart()
+    {
+        $sql = 'SELECT idMateriels AS id FROM materiels WHERE stateItem = 1';
+        $itemLowStockList = $this->RequestDB($sql);
+        $itemObject = $itemLowStockList->fetchAll(PDO::FETCH_ASSOC);
+        return $itemObject;
+    }
+
+    /** 
+     * @return array $itemObject 
+     * Array of stockItem quantity which are Out of Stock
+     * 
+    */
+    public function getItemOutOfStockPiechart()
+    {
+        $sql = 'SELECT idMateriels AS id FROM materiels WHERE stateItem = 0';
+        $itemOutOfStockList = $this->RequestDB($sql);
+        $itemObject = $itemOutOfStockList->fetchAll(PDO::FETCH_ASSOC);
+        return $itemObject;
+    }
+
+    /** 
+     * @return array $itemObject 
+     * Array of stockItem quantity which are half Stock
+     * 
+    */
+    public function getItemHalfStockPiechart()
+    {
+        $sql = 'SELECT idMateriels AS id FROM materiels WHERE stateItem = 2';
+        $itemHalfStockList = $this->RequestDB($sql);
+        $itemObject = $itemHalfStockList->fetchAll(PDO::FETCH_ASSOC);
+        return $itemObject;
+    }
+    
+    /** 
+     * @return array $itemObject 
+     * Array of stockItem quantity which are full stock
+     * 
+    */
+    public function getItemFullStockPiechart()
+    {
+        $sql = 'SELECT idMateriels AS id FROM materiels WHERE stateItem = 3';
+        $itemFullStockList = $this->RequestDB($sql);
+        $itemObject = $itemFullStockList->fetchAll(PDO::FETCH_ASSOC);
+        return $itemObject;
     }
 
     /** 
